@@ -11,11 +11,17 @@ namespace PlacesBeen
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
-      // Get["/tasks"] = _ => {
-      //   List<Task> allTasks = Task.GetAll();
-      //   return View["tasks.cshtml", allTasks];
+      // Get["/places"] = _ => {
+      //   List<Place> allPlaces = Place.GetAll();
+      //   return View["places.cshtml", allPlaces];
       // };
-
+      Get["/goForm"] = _ => {
+        return View["addPlace.cshtml"];
+      };
+      Post["/addPlace"] = _ => {
+        Place newPlace = new Place(Request.Form["city"]);
+        return View["placesList.cshtml", newPlace];
+      };
     }
   }
 }

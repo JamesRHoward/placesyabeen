@@ -6,6 +6,13 @@ namespace PlacesBeen.Objects
   {
     private string _city;
 
+    public Place (string city)
+    {
+      _city = city;
+      // _instances.Add(this);
+      // _id = _instances.Count;
+    }
+
     public string GetCity()
     {
       return _city;
