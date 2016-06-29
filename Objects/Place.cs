@@ -6,10 +6,12 @@ namespace PlacesBeen.Objects
   {
     private string _city;
 
+    private static List<Place> _instances = new List<Place> {};
+
     public Place (string city)
     {
       _city = city;
-      // _instances.Add(this);
+      _instances.Add(this);
       // _id = _instances.Count;
     }
 
@@ -22,5 +24,11 @@ namespace PlacesBeen.Objects
     {
       _city = newCity;
     }
+
+    public static List<Place> GetAll()
+    {
+      return _instances;
+    }
+
   }
 }

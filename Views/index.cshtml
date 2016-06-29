@@ -1,1 +1,17 @@
-<a href="/goForm">Add a place</a>
+@if (Model.Count == 0) {
+  <h1>WELCOME</h1>
+}
+You have visited...
+<ul>
+  @if (Model.Count == 0) {
+    <li>NowheresVille, apparently</li>
+  }
+  @foreach (var city in Model) {
+    <li>@city.GetCity()</li>
+  }
+</ul>
+@if (Model.Count == 0) {
+  <a href="/goForm">Add your first place</a>
+} else {
+  <a href="/goForm">Add another place</a>
+}

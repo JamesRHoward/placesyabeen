@@ -9,7 +9,8 @@ namespace PlacesBeen
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        List<Place> allPlaces = Place.GetAll();
+        return View["index.cshtml", allPlaces];
       };
       // Get["/places"] = _ => {
       //   List<Place> allPlaces = Place.GetAll();
@@ -20,7 +21,8 @@ namespace PlacesBeen
       };
       Post["/addPlace"] = _ => {
         Place newPlace = new Place(Request.Form["city"]);
-        return View["placesList.cshtml", newPlace];
+        List<Place> allPlaces = Place.GetAll();
+        return View["index.cshtml", allPlaces];
       };
     }
   }
