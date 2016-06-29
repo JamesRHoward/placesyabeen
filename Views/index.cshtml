@@ -7,7 +7,7 @@ You have visited...
     <li>NowheresVille, apparently</li>
   }
   @foreach (var city in Model) {
-    <li>@city.GetCity()</li>
+    <li>@city.GetCity() hey here's a <a href="@city.GetImageLink()">PIC</a></li>
   }
 </ul>
 @if (Model.Count == 0) {
